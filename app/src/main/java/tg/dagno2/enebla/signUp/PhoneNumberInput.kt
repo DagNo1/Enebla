@@ -31,10 +31,10 @@ class PhoneNumberInput : AppCompatActivity() {
             override fun afterTextChanged(s: Editable?) {
                 if (agreed.isChecked && phoneNumber.text.toString().length == 9){//TODO: USE REGEX
                     next.isEnabled = true
-                    next.setTextColor(Color.parseColor("#FFFFFFFF"))
+                    next.setTextColor(Color.parseColor("#E5E5E5"))
                 }else {
                     next.isEnabled = false
-                    next.setTextColor(Color.parseColor("#E5E5E5"))
+                    next.setTextColor(Color.parseColor("#777474"))
                 }
             }
 
@@ -44,10 +44,10 @@ class PhoneNumberInput : AppCompatActivity() {
         agreed.setOnClickListener {
             if (agreed.isChecked && phoneNumber.text.toString().length == 9){//TODO: USE REGEX
                 next.isEnabled = true
-                next.setTextColor(Color.parseColor("#FFFFFFFF"))
+                next.setTextColor(Color.parseColor("#E5E5E5"))
             }else {
                 next.isEnabled = false
-                next.setTextColor(Color.parseColor("#E5E5E5"))
+                next.setTextColor(Color.parseColor("#777474"))
             }
         }
         next.setOnClickListener {

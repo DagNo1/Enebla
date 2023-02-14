@@ -25,10 +25,10 @@ class OTP : AppCompatActivity() {
             override fun afterTextChanged(s: Editable?) {
                 if (otpView.text.toString().length == 6){//TODO: USE REGEX
                     verify.isEnabled = true
-                    verify.setTextColor(Color.parseColor("#FFFFFFFF"))
+                    verify.setTextColor(Color.parseColor("#E5E5E5"))
                 }else {
                     verify.isEnabled = false
-                    verify.setTextColor(Color.parseColor("#E5E5E5"))
+                    verify.setTextColor(Color.parseColor("#777474"))
                 }
             }
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}

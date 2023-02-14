@@ -33,7 +33,7 @@ class PersonalInformationInput : AppCompatActivity() {
         male = findViewById(R.id.radioButton_male_in_ca)
         female = findViewById(R.id.radioButton_female_in_ca)
         email = findViewById(R.id.e_input_in_ca)
-        pass = findViewById(R.id.p_input_in_ca)
+        pass = findViewById(R.id.p_input_in_ca)//TODO MAKE PASSWORD INVISIBLE
         cpass = findViewById(R.id.cp_input_in_ca)
         next = findViewById(R.id.su_ca_next_button)
 
@@ -46,6 +46,7 @@ class PersonalInformationInput : AppCompatActivity() {
             formFilled = valueFiled(pass,findViewById(R.id.tv7_in_ca)) && formFilled
             formFilled = valueFiled(cpass,findViewById(R.id.tv8_in_ca)) && formFilled
             if (formFilled) {
+                //TODO ADD FIREBASE HERE
                 startActivity(Intent(this,MainActivity::class.java))
             }
         }
@@ -63,7 +64,7 @@ class PersonalInformationInput : AppCompatActivity() {
             male,female -> if (!(male.isChecked || female.isChecked)) filled = false
             email -> if(!email.text.toString().matches(emailR)) filled = false
             pass -> if(!pass.text.toString().matches(passR)) filled = false
-            cpass -> if(!cpass.text.toString().matches(passR) && text == pass.text.toString()) filled = false
+            cpass -> if(!cpass.text.toString().matches(passR) && text != pass.text.toString()) filled = false
         }
         //to mark the unfilled input with star
         if (!filled && text.last() != '*') t.text = "$text*"
