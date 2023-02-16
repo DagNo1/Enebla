@@ -70,7 +70,8 @@
             android:paddingHorizontal="20sp"
             android:paddingVertical="10sp"
             android:textSize="16sp"
-            android:inputType="textEmailAddress"/>
+            android:inputType="textEmailAddress"
+            android:autofillHints="emailAddress"/>
         <TextView
             android:id="@+id/tv7_in_li"
             android:layout_width="wrap_content"
@@ -93,7 +94,7 @@
             android:paddingHorizontal="20sp"
             android:paddingVertical="10sp"
             android:textSize="16sp"
-            android:autofillHints=""
+            android:autofillHints="password"
             android:inputType="textPassword" />
     </LinearLayout>
 
@@ -130,7 +131,8 @@
             android:layout_width="2sp"
             android:layout_height="30sp"
             android:layout_marginVertical="8sp"
-            android:src="@drawable/signup_vertical_line" />
+            android:src="@drawable/signup_vertical_line"
+            android:contentDescription="@string/line"/>
 
         <TextView
             android:id="@+id/forgot_password_in_li"

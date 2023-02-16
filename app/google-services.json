@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "375214611249",
+    "project_id": "enebla-aa0ec",
+    "storage_bucket": "enebla-aa0ec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:375214611249:android:9ff6a79ae0c7807c64ae10",
+        "android_client_info": {
+          "package_name": "tg.dagno2.enebla"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "375214611249-avcdt3otdht3r8jefm2l2d3lt2jad34o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tg.dagno2.enebla",
+            "certificate_hash": "a333236262404e4f0dba521adeaba896d20d5fce"
+          }
+        },
+        {
+          "client_id": "375214611249-vm9gdn5k59apli74btsg5lrs49jn38tm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPIbCgxQ4yFlPOZGWXSsJx9h5kt_wCwNk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "375214611249-vm9gdn5k59apli74btsg5lrs49jn38tm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

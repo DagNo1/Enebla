@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".firstTimer.Boarding"
-    android:background="@color/oxford_blue">
+    android:background="@color/oxford_blue"
+    tools:context=".firstTimer.Boarding">
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager2"
         android:layout_width="match_parent"
@@ -34,9 +34,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/inter_medium"
         android:paddingHorizontal="30sp"
         android:text="@string/register"
-        android:fontFamily="@font/inter_medium"
         android:textColor="@color/orange_web"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -44,17 +45,16 @@
         app:layout_constraintHorizontal_bias="0.24"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/indicator"
-        app:layout_constraintVertical_bias="0.504"
-        android:focusable="true" />
+        app:layout_constraintVertical_bias="0.504" />
 
     <Button
         android:id="@+id/b_login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/button_main"
+        android:fontFamily="@font/inter_medium"
         android:paddingHorizontal="30sp"
         android:text="@string/log_in"
-        android:fontFamily="@font/inter_medium"
         android:textAllCaps="false"
         android:textColor="@color/platinum"
         android:textSize="30sp"

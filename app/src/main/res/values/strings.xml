@@ -49,4 +49,6 @@
     <string name="settings">Settings</string>
     <string name="john_doe">John doe</string>
     <string name="abebe_bikila">Abebe Bikila</string>
+    <string name="flag">flag</string>
+    <string name="line">Line</string>
 </resources>

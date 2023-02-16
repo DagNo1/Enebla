@@ -51,7 +51,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10sp"
-            android:src="@drawable/ethiopian_flag" />
+            android:src="@drawable/ethiopian_flag"
+            android:contentDescription="@string/flag"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -66,7 +67,8 @@
             android:layout_width="2sp"
             android:layout_height="30sp"
             android:layout_marginVertical="8sp"
-            android:src="@drawable/signup_vertical_line" />
+            android:src="@drawable/signup_vertical_line"
+            android:contentDescription="@string/line"/>
 
         <EditText
             android:id="@+id/phone_number_input_in_pv"
@@ -79,7 +81,7 @@
             android:padding="10sp"
             android:textSize="18sp"
             android:maxLength="9"
-            android:importantForAutofill="no" />
+            android:importantForAutofill="no"/>
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
