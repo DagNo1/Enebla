@@ -7,7 +7,9 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.Button
+import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.core.view.isVisible
 import com.google.firebase.auth.*
 import com.noobcode.otpview.OTPView
 import tg.dagno2.enebla.R
@@ -42,6 +44,7 @@ class OTP : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
         verify.setOnClickListener {
+            showProgressBar()//TODO USE THREAD HERE
             val otp = otpView.text.toString()
             val credential : PhoneAuthCredential = PhoneAuthProvider.getCredential(storedVerificationId.toString(), otp)
             signInWithPhoneAuthCredential(credential)//TODO USE THREADS
@@ -56,7 +59,6 @@ class OTP : AppCompatActivity() {
                     val intent = Intent(this , PersonalInformationInput::class.java)
                     intent.putExtra("phoneNumber",number)
                     startActivity(intent)
-                    //TODO ones verified delete the user with the phone
                     finish()
                 } else {
                     // Sign in failed, display a message and update the UI
@@ -64,8 +66,17 @@ class OTP : AppCompatActivity() {
                         // The verification code entered was invalid
                         Toast.makeText(this,"Invalid OTP", Toast.LENGTH_SHORT).show()
                     }
+                    hideProgressBar()
                 }
             }
+    }
+    private fun hideProgressBar(){
+        findViewById<ProgressBar>(R.id.progress_bar_otp).isVisible = false
+        findViewById<Button>(R.id.su_otp_verify_button).isVisible = true
+    }
+    private fun showProgressBar(){
+        findViewById<ProgressBar>(R.id.progress_bar_otp).isVisible = true
+        findViewById<Button>(R.id.su_otp_verify_button).isVisible = false
     }
 
 }

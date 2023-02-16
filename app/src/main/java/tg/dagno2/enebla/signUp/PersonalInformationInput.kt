@@ -1,10 +1,13 @@
 package tg.dagno2.enebla.signUp
 
 import android.content.Intent
+import android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK
+import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
+import androidx.core.view.isVisible
 import com.google.firebase.auth.*
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -35,12 +38,14 @@ class PersonalInformationInput : AppCompatActivity() {
         database = FirebaseDatabase.getInstance().getReference("Users")
         number =  intent.getStringExtra("phoneNumber") ?: ""
         binding.suCaNextButton.setOnClickListener {
+            showProgressBar()
             val formFilled = valueFiled(binding.fnInputInCa, binding.tv3InCa) + valueFiled(binding.lnInputInCa, binding.tv4InCa) +
                     valueFiled(binding.gender, binding.tv5InCa) + valueFiled(binding.eInputInCa, binding.tv6InCa) +
                     valueFiled(binding.pInputInCa, binding.tv7InCa) + valueFiled(binding.cpInputInCa, binding.tv8InCa)
 
             if (formFilled != 6) {//all 6 fields are filled
                 Toast.makeText(this@PersonalInformationInput, "* fields are required to register.", Toast.LENGTH_LONG).show()
+                hideProgressBar()
                 return@setOnClickListener
             }
             registerUser()
@@ -87,6 +92,7 @@ class PersonalInformationInput : AppCompatActivity() {
                 }
             } catch (e: Exception) {
                 withContext(Dispatchers.Main) {
+                    hideProgressBar()
                     Toast.makeText(this@PersonalInformationInput, e.message, Toast.LENGTH_LONG).show()
                 }
             }
@@ -96,9 +102,19 @@ class PersonalInformationInput : AppCompatActivity() {
         val user = User(str(binding.fnInputInCa), str(binding.lnInputInCa), str(binding.eInputInCa),binding.rbMaleInCa.isChecked,number) // gender true if male false if female
         database.child(auth.currentUser?.uid.toString()).setValue(user).addOnSuccessListener {
             Toast.makeText(this@PersonalInformationInput, "Successfully Registered", Toast.LENGTH_LONG).show()
-            startActivity(Intent(this,MainActivity::class.java))
+            val intent =Intent(this,MainActivity::class.java)
+            intent.flags = FLAG_ACTIVITY_NEW_TASK or FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
         }.addOnFailureListener{
             Toast.makeText(this@PersonalInformationInput, "Registration Failed", Toast.LENGTH_LONG).show()
         }
+    }
+    private fun hideProgressBar(){
+        binding.progressBar.isVisible = false
+        binding.suCaNextButton.isVisible = true
+    }
+    private fun showProgressBar(){
+        binding.progressBar.isVisible = true
+        binding.suCaNextButton.isVisible = false
     }
 }

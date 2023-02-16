@@ -19,7 +19,6 @@ class SplashScreen : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         setContentView(R.layout.activity_splash_screen)
         val sharedPreferences = getSharedPreferences("LoadUp", Context.MODE_PRIVATE)
-        //TODO CHECK IF THE USER IS SIGNED IN
         Handler().postDelayed({
             if (sharedPreferences.getBoolean("first_time",true)){
                 val onBoarding = Intent(this, Boarding::class.java)

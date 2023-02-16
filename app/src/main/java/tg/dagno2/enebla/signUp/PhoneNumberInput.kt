@@ -8,21 +8,24 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
-import android.widget.Button
-import android.widget.CheckBox
-import android.widget.EditText
-import android.widget.TextView
+import android.widget.*
+import androidx.core.view.isVisible
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import tg.dagno2.enebla.MainActivity
-import tg.dagno2.enebla.R
+import tg.dagno2.enebla.databinding.ActivityPhoneNumberInputBinding
 import java.util.concurrent.TimeUnit
 
 class PhoneNumberInput : AppCompatActivity() {
     var number: String = ""
+    private lateinit var binding: ActivityPhoneNumberInputBinding
     private lateinit var auth: FirebaseAuth // create instance of firebase auth
     // we will use this to match the sent otp from firebase
     lateinit var storedVerificationId: String
@@ -33,7 +36,8 @@ class PhoneNumberInput : AppCompatActivity() {
         if (supportActionBar != null) {
             supportActionBar?.hide()
         }
-        setContentView(R.layout.activity_phone_number_input)
+        binding = ActivityPhoneNumberInputBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         auth=FirebaseAuth.getInstance()
         // Callback function for Phone Auth
@@ -71,13 +75,11 @@ class PhoneNumberInput : AppCompatActivity() {
             }
         }
 
+        val phoneNumber = binding.phoneNumberInputInPv
+        val agreed = binding.termAgreement
+        val next = binding.suPniNextButton
 
-        val phoneNumber = findViewById<EditText>(R.id.phone_number_input_in_pv)
-        val agreed = findViewById<CheckBox>(R.id.term_agreement)
-        val next = findViewById<Button>(R.id.su_pni_next_button)
-        val terms = findViewById<TextView>(R.id.signup_terms)
-
-        terms.setOnClickListener {
+        binding.signupTerms.setOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://www.ethiotelecom.et/telebirr/")))
         }
         phoneNumber.addTextChangedListener(object : TextWatcher {
@@ -103,19 +105,37 @@ class PhoneNumberInput : AppCompatActivity() {
             }
         }
         next.setOnClickListener {
+            showProgressBar()
             number = "+251${phoneNumber.text.toString()}"
-            //TODO Add thread here for the verification progress bar
             sendVerificationCode(number)
         }
     }
     private fun sendVerificationCode(number: String) {
-        val options = PhoneAuthOptions.newBuilder(auth)
-            .setPhoneNumber(number) // Phone number to verify
-            .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
-            .setActivity(this) // Activity (for callback binding)
-            .setCallbacks(callbacks) // OnVerificationStateChangedCallbacks
-            .build()
-        PhoneAuthProvider.verifyPhoneNumber(options)
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val options = PhoneAuthOptions.newBuilder(auth)
+                    .setPhoneNumber(number) // Phone number to verify
+                    .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
+                    .setActivity(this@PhoneNumberInput) // Activity (for callback binding)
+                    .setCallbacks(callbacks) // OnVerificationStateChangedCallbacks
+                    .build()
+                PhoneAuthProvider.verifyPhoneNumber(options)
+            } catch (e: Exception) {
+                withContext(Dispatchers.Main) {
+                    hideProgressBar()
+                    Toast.makeText(this@PhoneNumberInput, e.message, Toast.LENGTH_LONG).show()
+                }
+            }
+        }
+
         Log.d("Msg", "Auth started")
+    }
+    private fun hideProgressBar(){
+        binding.progressBar.isVisible = false
+        binding.suPniNextButton.isVisible = true
+    }
+    private fun showProgressBar(){
+        binding.progressBar.isVisible = true
+        binding.suPniNextButton.isVisible = false
     }
 }

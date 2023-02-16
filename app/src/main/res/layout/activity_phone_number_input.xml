@@ -136,6 +136,18 @@
             android:focusable="true" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:layout_marginTop="20dp"
+        android:indeterminateTint="@color/platinum"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.766"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
     <Button
         android:id="@+id/su_pni_next_button"
         android:layout_width="wrap_content"
