@@ -54,4 +54,5 @@
     <string name="logo">logo</string>
     <string name="edit">edit</string>
     <string name="map">map</string>
+    <string name="phone_number">Phone No.</string>
 </resources>
