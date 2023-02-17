@@ -12,7 +12,7 @@
     <string name="register">Register</string>
     <string name="enter_your_phone_number">Enter your phone number</string>
     <string name="_251">+251</string>
-    <string name="_123_456_789">123-456-789</string>
+    <string name="_123_456_789">123–456–789</string>
     <string name="terms_link_text"><u>terms and agreement.</u></string>
     <string name="i_have_read_and_agree_to_enebla_s">I have read and agree to enebla\'s</string>
     <string name="next">Next</string>
@@ -51,4 +51,7 @@
     <string name="abebe_bikila">Abebe Bikila</string>
     <string name="flag">flag</string>
     <string name="line">Line</string>
+    <string name="logo">logo</string>
+    <string name="edit">edit</string>
+    <string name="map">map</string>
 </resources>

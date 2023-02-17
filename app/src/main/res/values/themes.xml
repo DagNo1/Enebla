@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.Enebla" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/oxford_blue</item>
+        <item name="colorPrimary">@color/orange_web</item>
         <item name="colorPrimaryDark">@color/oxford_blue</item>
         <item name="colorAccent">@color/teal_200</item>
         <!-- Customize your theme here. -->
@@ -13,5 +13,8 @@
     </style>
     <style name="Theme.Enebla.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="Theme.Enebla.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
+    <style name="roundedImageViewRounded">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
 </resources>
