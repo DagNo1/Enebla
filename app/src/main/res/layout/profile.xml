@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".HomePage"
     android:background="@color/oxford_blue">
 
     <ImageView
@@ -12,26 +12,26 @@
         android:layout_width="100sp"
         android:layout_height="100sp"
         android:layout_marginEnd="223dp"
-        android:layout_marginBottom="20dp"
+        android:contentDescription="@string/logo"
         android:src="@drawable/logo"
         app:layout_constraintEnd_toStartOf="@+id/setting"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/logo"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageButton
         android:id="@+id/setting"
         android:layout_width="55sp"
         android:layout_height="55sp"
-        android:scaleY="2.5"
-        android:scaleX="2.5"
-        android:layout_marginTop="16dp"
+        android:background="@color/oxford_blue"
         android:clickable="true"
         android:contentDescription="@string/settings"
         android:focusable="true"
+        android:scaleX="1.6"
+        android:scaleY="1.6"
         android:src="@drawable/ic_setting"
-        android:background="@color/oxford_blue"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -78,7 +78,6 @@
         app:layout_constraintTop_toBottomOf="@+id/profile_picture"
         android:indeterminateTint="@color/platinum"
         android:id="@+id/progress_profile"
-
         />
 
     <TextView

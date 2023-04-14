@@ -4,14 +4,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import tg.dagno2.enebla.friends.Friends
+import tg.dagno2.enebla.profile.Profile
+import tg.dagno2.enebla.restaurant.Restaurant
 
-class MainActivity : AppCompatActivity() {
+class HomePage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if (supportActionBar != null) {
-            supportActionBar?.hide()
-        }
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_home_page)
 
         val restaurant = Restaurant()
         val friends = Friends()
