@@ -1,41 +1,33 @@
 {
   "project_info": {
-    "project_number": "375214611249",
-    "project_id": "enebla-aa0ec",
-    "storage_bucket": "enebla-aa0ec.appspot.com"
+    "project_number": "786728368263",
+    "project_id": "enebla-c65cd",
+    "storage_bucket": "enebla-c65cd.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:375214611249:android:9ff6a79ae0c7807c64ae10",
+        "mobilesdk_app_id": "1:786728368263:android:eaa3d4e2a4d4c77b7b6022",
         "android_client_info": {
           "package_name": "tg.dagno2.enebla"
         }
       },
       "oauth_client": [
         {
-          "client_id": "375214611249-avcdt3otdht3r8jefm2l2d3lt2jad34o.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "tg.dagno2.enebla",
-            "certificate_hash": "a333236262404e4f0dba521adeaba896d20d5fce"
-          }
-        },
-        {
-          "client_id": "375214611249-vm9gdn5k59apli74btsg5lrs49jn38tm.apps.googleusercontent.com",
+          "client_id": "786728368263-piioufh74gh3bpubg20a68nmoamdeibi.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBPIbCgxQ4yFlPOZGWXSsJx9h5kt_wCwNk"
+          "current_key": "AIzaSyCCF7Tuu9PMsNmINV9f4WJl4vF_OckGtds"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "375214611249-vm9gdn5k59apli74btsg5lrs49jn38tm.apps.googleusercontent.com",
+              "client_id": "786728368263-piioufh74gh3bpubg20a68nmoamdeibi.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
