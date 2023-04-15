@@ -50,23 +50,23 @@
         app:strokeColor="@color/platinum"
         app:strokeWidth="1dp"/>
 
-    <ImageButton
-        android:id="@+id/edit_profile_pic"
-        android:layout_width="35sp"
-        android:layout_height="35sp"
-        android:background="@android:color/transparent"
-        android:clickable="true"
-        android:contentDescription="@string/edit"
-        android:focusable="true"
-        android:scaleX="1.4"
-        android:scaleY="1.4"
-        android:src="@drawable/ic_edit"
-        app:layout_constraintBottom_toBottomOf="@+id/profile_picture"
-        app:layout_constraintEnd_toEndOf="@+id/profile_picture"
-        app:layout_constraintHorizontal_bias="0.962"
-        app:layout_constraintStart_toStartOf="@+id/profile_picture"
-        app:layout_constraintTop_toTopOf="@+id/profile_picture"
-        app:layout_constraintVertical_bias="0.944" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/edit_profile_pic"-->
+<!--        android:layout_width="35sp"-->
+<!--        android:layout_height="35sp"-->
+<!--        android:background="@android:color/transparent"-->
+<!--        android:clickable="true"-->
+<!--        android:contentDescription="@string/edit"-->
+<!--        android:focusable="true"-->
+<!--        android:scaleX="1.4"-->
+<!--        android:scaleY="1.4"-->
+<!--        android:src="@drawable/ic_edit"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/profile_picture"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/profile_picture"-->
+<!--        app:layout_constraintHorizontal_bias="0.962"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/profile_picture"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/profile_picture"-->
+<!--        app:layout_constraintVertical_bias="0.944" />-->
 
     <ProgressBar
         android:layout_width="50sp"
@@ -86,7 +86,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10sp"
         android:fontFamily="@font/inter_semibold"
-        android:text="@string/abebe_bikila"
+        android:text="@string/dots"
         android:textColor="@color/platinum"
         android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
