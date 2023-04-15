@@ -15,5 +15,15 @@ class CommonFunctions {
             hide.isVisible = false
         }
         fun str(input: EditText): String =  input.text.toString() // thought it would make it cleaner str == stringer
+        fun disableFields(views: List<View>){
+            for (i in views){
+                i.isEnabled = false
+            }
+        }
+        fun enableFields(views: List<View>){
+            for (i in views){
+                i.isEnabled = true
+            }
+        }
     }
 }

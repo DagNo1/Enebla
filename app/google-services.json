@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "786728368263-tbqa57402pa3qaqvqht4vleflcuooqgr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tg.dagno2.enebla",
+            "certificate_hash": "a333236262404e4f0dba521adeaba896d20d5fce"
+          }
+        },
+        {
           "client_id": "786728368263-piioufh74gh3bpubg20a68nmoamdeibi.apps.googleusercontent.com",
           "client_type": 3
         }

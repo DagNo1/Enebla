@@ -11,6 +11,13 @@ class Validator {
                     errorMessage = "The username can't be blank"
                 )
             }
+            val containsOther = username.any { !it.isLetterOrDigit() }
+            if(containsOther) {
+                return ValidationResult(
+                    successful = false,
+                    errorMessage = "The username can't contain spaces or special characters"
+                )
+            }
             return ValidationResult(
                 successful = true
             )

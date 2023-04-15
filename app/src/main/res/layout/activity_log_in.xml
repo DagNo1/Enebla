@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/oxford_blue"
     tools:context=".login_signup.LogIn">
-
+    <!--        TODO: change EDITTEXT to  TextInputEditText-->
     <TextView
         android:id="@+id/textView1_in_ln"
         android:layout_width="wrap_content"
